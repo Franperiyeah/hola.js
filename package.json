@@ -1,5 +1,5 @@
 {
-  "name": "Heyjs",
+  "name": "hola.js",
   "version": "1.0.0",
   "description": "a fast and small JavaScript library.",
   "main": "index.js",
@@ -11,9 +11,10 @@
     "url": "git+https://github.com/Franperiyeah/heyjs.git"
   },
   "keywords": [
-    "basicjs",
+    "holajs",
     "javascript",
-    "library"
+    "library",
+    "hola.js"
   ],
   "author": "Fran Ruiz Santaclara",
   "license": "ISC",
