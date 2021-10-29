@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Franperiyeah/heyjs.git"
+    "url": "git+https://github.com/Franperiyeah/holajs.git"
   },
   "keywords": [
     "holajs",
@@ -19,7 +19,7 @@
   "author": "Fran Ruiz Santaclara",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Franperiyeah/heyjs/issues"
+    "url": "https://github.com/Franperiyeah/holajs/issues"
   },
-  "homepage": "https://github.com/Franperiyeah/heyjs#readme"
+  "homepage": "https://github.com/Franperiyeah/holajs#readme"
 }
