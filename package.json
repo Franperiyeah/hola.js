@@ -1,7 +1,7 @@
 {
   "name": "hola.js",
-  "version": "1.0.1",
-  "description": "a fast and small JavaScript library.",
+  "version": "1.1.1",
+  "description": "A fast and small JavaScript library similar to jQuery.",
   "main": "index.js",
   "scripts": {
     "test": "run test"
