@@ -181,3 +181,152 @@ find: function(selector) {
   });
   return $(elements);
 }
+
+// Prepend an element to the elements
+prepend: function(element) {
+  this.elements.forEach(function(el) {
+    el.insertBefore(element, el.firstChild);
+  });
+  return this;
+},
+
+// Prepend an HTML string to the elements
+prepend: function(html) {
+  this.elements.forEach(function(el) {
+    el.innerHTML = html + el.innerHTML;
+  });
+  return this;
+}
+
+// Add a class to the elements
+addClass: function(className) {
+  this.elements.forEach(function(element) {
+    element.classList.add(className);
+  });
+  return this;
+},
+
+// Remove a class from the elements
+removeClass: function(className) {
+  this.elements.forEach(function(element) {
+    element.classList.remove(className);
+  });
+  return this;
+},
+
+// Toggle a class on the elements
+toggleClass: function(className) {
+  this.elements.forEach(function(element) {
+    element.classList.toggle(className);
+  });
+  return this;
+}
+
+// Select the parent element of each element
+parent: function() {
+  var parents = [];
+  this.elements.forEach(function(element) {
+    parents.push(element.parentNode);
+  });
+  return $(parents);
+}
+
+// Set the text content of the elements
+text: function(text) {
+  this.elements.forEach(function(element) {
+    element.textContent = text;
+  });
+  return this;
+},
+
+// Get the text content of the first element
+text: function() {
+  return this.elements[0].textContent;
+}
+
+// Select the child elements of the elements
+children: function() {
+  var children = [];
+  this.elements.forEach(function(element) {
+    children = children.concat([].slice.call(element.children));
+  });
+  return $(children);
+},
+
+// Select the sibling elements of the elements
+siblings: function() {
+  var siblings = [];
+  this.elements.forEach(function(element) {
+    siblings = siblings.concat([].slice.call(element.parentNode.children).filter(function(child) {
+      return child !== element;
+    }));
+  });
+  return $(siblings);
+}
+
+// Hide the elements
+hide: function() {
+  this.elements.forEach(function(element) {
+    element.style.display = "none";
+  });
+  return this;
+}
+
+// Show the elements
+show: function() {
+  this.elements.forEach(function(element) {
+    element.style.display = "";
+  });
+  return this;
+}
+
+// Set an attribute of the elements
+attr: function(name, value) {
+  this.elements.forEach(function(element) {
+    element.setAttribute(name, value);
+  });
+  return this;
+},
+
+// Get the value of an attribute of the first element
+attr: function(name) {
+  return this.elements[0].getAttribute(name);
+}
+
+// Remove an attribute from the elements
+removeAttr: function(name) {
+  this.elements.forEach(function(element) {
+    element.removeAttribute(name);
+  });
+  return this;
+}
+
+// Trigger an event on the elements
+trigger: function(eventType) {
+  this.elements.forEach(function(element) {
+    var event = new Event(eventType);
+    element.dispatchEvent(event);
+  });
+  return this;
+}
+
+// Attach an event listener that will be removed after the first trigger
+one: function(eventType, handler) {
+  this.elements.forEach(function(element) {
+    element.addEventListener(eventType, function oneHandler() {
+      handler.apply(this, arguments);
+      element.removeEventListener(eventType, oneHandler);
+    });
+  });
+  return this;
+}
+
+// Attach mouseenter and mouseleave event listeners to the elements
+hover: function(enterHandler, leaveHandler) {
+  this.elements.forEach(function(element) {
+    element.addEventListener("mouseenter", enterHandler);
+    element.addEventListener("mouseleave", leaveHandler);
+  });
+  return this;
+}
+
