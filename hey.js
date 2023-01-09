@@ -330,3 +330,32 @@ hover: function(enterHandler, leaveHandler) {
   return this;
 }
 
+$("input").focus(function() {
+  console.log("Input element focused");
+});
+
+$("input").blur(function() {
+  console.log("Input element blurred");
+});
+
+$("form").submit(function(event) {
+  event.preventDefault();
+  console.log("Form submitted");
+});
+
+$("input").change(function() {
+  console.log("Input value changed");
+});
+
+$("input").keydown(function() {
+  console.log("Key pressed down");
+});
+
+$("input").keyup(function() {
+  console.log("Key released");
+});
+
+$("div").mousemove(function() {
+  console.log("Mouse moved over element");
+});
+
